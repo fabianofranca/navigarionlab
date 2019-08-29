@@ -1,10 +1,7 @@
 package com.fabianofranca.navigationlab
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.TaskStackBuilder
-import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -34,22 +31,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         threeButton.setOnClickListener {
-
-            val key = "android-support-nav:controller:deepLinkIds"
-
-            val ids = intArrayOf(R.id.fragmentOne, R.id.fragmentTwo/*, R.id.fragmentThree*/)
-//
-//            val intent = Intent(this, MainActivity::class.java).apply {
-//                putExtra(key, ids)
-//            }
-//            startActivity(Intent(intent))
-
-            controller.createDeepLink().setDestination(R.id.fragmentThree).createTaskStackBuilder().run {
-                editIntentAt(0)?.putExtra(key, ids)
-                startActivities()
-            }
-
-            //controller.navigate(R.id.action_global_fragmentThree)
+            controller.navigate(R.id.action_fragmentOne_to_fragmentTwo)
+            controller.navigate(R.id.action_fragmentTwo_to_fragmentThree)
         }
     }
 

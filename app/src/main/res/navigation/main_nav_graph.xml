@@ -23,4 +23,7 @@
             android:id="@+id/fragmentThree"
             android:name="com.fabianofranca.navigationlab.FragmentThree"
             android:label="FragmentThree" />
+    <action
+            android:id="@+id/action_global_fragmentThree"
+            app:destination="@id/fragmentThree" />
 </navigation>
